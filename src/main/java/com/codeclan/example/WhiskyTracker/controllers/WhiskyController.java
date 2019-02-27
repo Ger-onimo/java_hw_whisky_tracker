@@ -22,5 +22,4 @@ public class WhiskyController {
         return whiskyRepository.findWhiskyByYear(year);
     }
 
-
 }
