@@ -26,8 +26,8 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
         List<Distillery> results = null;
         Session session = entityManager.unwrap(Session.class);
         Criteria cr = session.createCriteria(Distillery.class);
-        cr.createAlias("whisky", "whiskyAlias");
-        cr.add(Restrictions.gt("whiskyAlias.age", age));
+        cr.createAlias("whiskies", "whiskiesAlias");
+        cr.add(Restrictions.eq("whiskiesAlias.age", 12));
 
         results = cr.list();
 
