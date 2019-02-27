@@ -24,9 +24,7 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
     public List<Whisky> findWhiskyByAgeAndDistillery(int age, Long id) {
 
         List<Whisky> results = null;
-
         Session session = entityManager.unwrap(Session.class);
-
         Criteria cr = session.createCriteria(Whisky.class);
         cr.add(Restrictions.eq("age", age));
         cr.add(Restrictions.eq("distillery.id", id));
@@ -34,7 +32,22 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         results = cr.list();
 
         return results;
+    }
 
+    // TODO: find a list of whiskies from a particular region
+    // Have: Distillery distillery region
+    // Want: List<Whisky>
+
+    public List<Whisky> findWhiskyByRegion(String region){
+
+        List<Whisky> results = null;
+        Session session = entityManager.unwrap(Session.class);
+        Criteria cr = session.createCriteria(Whisky.class);
+        cr.add(Restrictions.eq("distillery.region", region));
+
+        results = cr.list();
+
+        return results;
     }
 
 }

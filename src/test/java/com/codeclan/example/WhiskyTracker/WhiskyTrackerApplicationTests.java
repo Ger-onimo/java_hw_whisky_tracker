@@ -46,4 +46,10 @@ public class WhiskyTrackerApplicationTests {
 		assertEquals("The Rosebank 12 - Flora and Fona", found.get(0).getName());
 	}
 
+	@Test
+	public void canFindWhiskiesByDistilleryRegion(){
+		List<Whisky> found = whiskyRepository.findWhiskyByRegion("Highland");
+
+	}
+
 }
