@@ -18,12 +18,17 @@ public class WhiskyController {
     WhiskyRepository whiskyRepository;
 
     @GetMapping(value = "/year/{year}")
-    public List<Whisky> getWhiskiesFromYear(@PathVariable int year){
+    public List<Whisky> getWhiskiesFromYear(@PathVariable int year) {
         return whiskyRepository.findWhiskyByYear(year);
     }
 
     @GetMapping(value = "/name/{age}/{id}")
-    public List<Whisky> findWhiskyByAgeAndDistillery(@PathVariable int age, @PathVariable Long id){
+    public List<Whisky> findWhiskyByAgeAndDistillery(@PathVariable int age, @PathVariable Long id) {
         return whiskyRepository.findWhiskyByAgeAndDistillery(age, id);
+    }
+
+    @GetMapping(value = "/region/name/{region}")
+    List<Whisky> findWhiskyByRegion(@PathVariable String region) {
+        return whiskyRepository.findWhiskyByRegion(region);
     }
 }
