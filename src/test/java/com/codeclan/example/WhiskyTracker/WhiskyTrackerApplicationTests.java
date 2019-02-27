@@ -48,7 +48,7 @@ public class WhiskyTrackerApplicationTests {
 
 	@Test
 	public void canFindWhiskiesByDistilleryRegion(){
-		List<Whisky> found = whiskyRepository.findWhiskyByRegion("Highland");
+		List<Whisky> found = distilleryRepository.findWhiskyByRegion("Highland");
 
 	}
 

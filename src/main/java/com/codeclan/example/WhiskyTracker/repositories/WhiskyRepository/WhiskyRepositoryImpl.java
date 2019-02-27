@@ -35,9 +35,9 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
     }
 
     // TODO: find a list of whiskies from a particular region
-    // Have: Distillery distillery region
+    // Have: Distillery distillery region. String region
     // Want: List<Whisky>
-
+    @Transactional
     public List<Whisky> findWhiskyByRegion(String region){
 
         List<Whisky> results = null;
